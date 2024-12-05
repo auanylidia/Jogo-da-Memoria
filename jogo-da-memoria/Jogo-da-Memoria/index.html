@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Da Memória</title>
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Bem-vindos ao Jogo!</h2>
+    <p id="playerNames"></p>
+
+    <script>
+      // Recupera os nomes dos jogadores do localStorage
+      const player1 = localStorage.getItem("player1");
+      const player2 = localStorage.getItem("player
+  
+      // Recupera os nomes dos jogadores do localStorage
+      const player1 = localStorage.getItem("player1");
+      const player2 = localStorage.getItem("player2");
+  
+      // Exibe os nomes dos jogadores
+      document.getElementById("playerNames").textContent = `Jogador 1: ${player1} | Jogador 2: ${player2}`;
+    </script>
+
+
+    <div class="game"></div>
+    <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+  </div>
+
+  <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>

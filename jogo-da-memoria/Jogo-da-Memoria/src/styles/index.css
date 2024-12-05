@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   background-image: url('/src/imagens/background.jpeg');
+    user-select: none;
+  background-size: cover; /* A imagem ocupa toda a área, mantendo a proporção */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  height: 100vh; /* Garante que o fundo ocupe toda a altura da janela */
+  margin: 0; /* Remove a margem padrão do body */
+}
+
+  
+  
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+      325deg,
+      #da742082 30%,
+      #cda1439d 70%,
+      #fdeff976 100%
+    );
+    padding: 40px 60px;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .reset {
+    background-color: #da7420c2;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px; 
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin:10px;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  }
+  
+  .reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+  }
+  
+  .game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+  }
+  
+  .item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+  }
+  
+  .item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    /* opacity: 0.85; */
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+  }
+  
+.item.boxOpen {
+transform: rotateY(0deg);
+}
+.boxOpen::after,
+  .boxMatch::after {
+    transform: rotateY(180deg);
+  }
